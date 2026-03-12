@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#16213e"/>
+  <!-- corpo do pássaro/máquina -->
+  <ellipse cx="400" cy="220" rx="150" ry="50" fill="#3d5070" stroke="#c9a84c" stroke-width="2"/>
+  <!-- asas -->
+  <path d="M250 220 Q200 140 150 180 Q200 170 250 200" fill="#4a6080" stroke="#c9a84c" stroke-width="1.5"/>
+  <path d="M550 220 Q600 140 650 180 Q600 170 550 200" fill="#4a6080" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- cauda -->
+  <path d="M250 220 Q220 250 200 260 Q230 255 250 240" fill="#4a6080" stroke="#c9a84c" stroke-width="1"/>
+  <!-- cabeça -->
+  <circle cx="560" cy="210" r="25" fill="#4a6080" stroke="#c9a84c" stroke-width="1.5"/>
+  <circle cx="570" cy="205" r="4" fill="#c9a84c"/>
+  <!-- bico -->
+  <path d="M585 210 L610 215 L585 218" fill="#c9a84c"/>
+  <!-- vela/leme -->
+  <rect x="390" y="160" width="20" height="60" fill="#c9a84c" opacity="0.6" rx="2"/>
+  <!-- linhas decorativas -->
+  <line x1="300" y1="270" x2="300" y2="320" stroke="#2a3a5c" stroke-width="2"/>
+  <line x1="400" y1="270" x2="400" y2="340" stroke="#2a3a5c" stroke-width="2"/>
+  <line x1="500" y1="270" x2="500" y2="310" stroke="#2a3a5c" stroke-width="2"/>
+  <!-- paisagem -->
+  <rect x="0" y="400" width="800" height="100" fill="#1a1a2e"/>
+  <path d="M0 400 Q200 370 400 400 Q600 430 800 400 L800 500 L0 500 Z" fill="#1e2d4d"/>
+  <text x="400" y="470" text-anchor="middle" fill="#6a7a9c" font-size="14" font-family="Georgia">A Passarola — Placeholder</text>
+</svg>

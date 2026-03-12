@@ -1,11 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorial do Convento</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+    <!-- Barra de progresso -->
+    <div class="barra-progresso" style="width: 0%"></div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA 0 — CAPA / INTRO        -->
+    <!-- ============================== -->
+    <div class="pagina pagina-intro ativa" id="pagina-0">
+        <h1>Memorial do Convento</h1>
+        <p class="subtitulo">Uma viagem interativa pela obra de José Saramago</p>
+        <button class="btn-comecar">Começar a Viagem</button>
+    </div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA 1 — SUBTEMA: IMAGEM     -->
+    <!-- (Clica num ponto da imagem)     -->
+    <!-- ============================== -->
+    <div class="pagina" id="pagina-1">
+        <div class="pagina-conteudo">
+            <h2>A Construção do Convento de Mafra</h2>
+            <p class="texto">
+                D. João V prometeu erguer um convento em Mafra se a rainha lhe desse um herdeiro. 
+                A promessa cumpriu-se, e com ela nasceu uma das maiores obras do barroco português.
+            </p>
+
+            <!-- Imagem com hotspot SVG -->
+            <div class="imagem-container">
+                <!-- Substitui pelo caminho da tua imagem -->
+                <img src="img/convento-mafra.svg" alt="Convento de Mafra">
+
+                <!-- SVG overlay com área clicável -->
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <!-- Hotspot: área clicável (ajusta x, y, width, height em %) -->
+                    <rect class="hotspot" x="40" y="30" width="20" height="25" rx="3" />
+                </svg>
+
+                <!-- Indicador visual a pulsar (posição CSS em %) -->
+                <div class="hotspot-dica" style="left: 50%; top: 42%;"></div>
+            </div>
+            <p class="instrucao-hotspot">Toca no ponto a brilhar na imagem para continuar...</p>
+        </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA 2 — SUBTEMA: PERGUNTA   -->
+    <!-- ============================== -->
+    <div class="pagina" id="pagina-2">
+        <div class="pagina-conteudo">
+            <h2>A Promessa do Rei</h2>
+            <p class="texto">
+                A construção do Convento de Mafra foi resultado de uma promessa real.
+            </p>
+
+            <div class="pergunta-container">
+                <p class="pergunta-texto">Que promessa fez D. João V?</p>
+                <div class="opcoes">
+                    <button class="opcao" data-correta="false">Construir uma ponte sobre o Tejo</button>
+                    <button class="opcao" data-correta="true">Erguer um convento se tivesse um herdeiro</button>
+                    <button class="opcao" data-correta="false">Financiar uma expedição marítima</button>
+                    <button class="opcao" data-correta="false">Construir um palácio em Lisboa</button>
+                </div>
+                <p class="feedback"></p>
+                <button class="btn-continuar">Continuar →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA 3 — SUBTEMA: IMAGEM     -->
+    <!-- ============================== -->
+    <div class="pagina" id="pagina-3">
+        <div class="pagina-conteudo">
+            <h2>Baltasar e Blimunda</h2>
+            <p class="texto">
+                Baltasar Sete-Sóis e Blimunda são o coração da narrativa. 
+                O amor deles contrasta com a grandiosidade fria do projeto real.
+            </p>
+
+            <div class="imagem-container">
+                <img src="img/baltasar-blimunda.svg" alt="Baltasar e Blimunda">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="20" y="35" width="25" height="30" rx="3" />
+                </svg>
+                <div class="hotspot-dica" style="left: 32%; top: 50%;"></div>
+            </div>
+            <p class="instrucao-hotspot">Encontra o ponto simbólico na imagem...</p>
+        </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA 4 — SUBTEMA: PERGUNTA   -->
+    <!-- ============================== -->
+    <div class="pagina" id="pagina-4">
+        <div class="pagina-conteudo">
+            <h2>As Personagens</h2>
+
+            <div class="pergunta-container">
+                <p class="pergunta-texto">Qual é a capacidade especial de Blimunda?</p>
+                <div class="opcoes">
+                    <button class="opcao" data-correta="false">Prever o futuro através dos sonhos</button>
+                    <button class="opcao" data-correta="false">Curar doenças com ervas</button>
+                    <button class="opcao" data-correta="true">Ver o interior das pessoas em jejum</button>
+                    <button class="opcao" data-correta="false">Comunicar com os mortos</button>
+                </div>
+                <p class="feedback"></p>
+                <button class="btn-continuar">Continuar →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA 5 — SUBTEMA: IMAGEM     -->
+    <!-- ============================== -->
+    <div class="pagina" id="pagina-5">
+        <div class="pagina-conteudo">
+            <h2>A Passarola de Bartolomeu de Gusmão</h2>
+            <p class="texto">
+                O Padre Bartolomeu de Gusmão sonha com uma máquina voadora — a Passarola. 
+                Com a ajuda de Baltasar e Blimunda, o sonho ganha asas.
+            </p>
+
+            <div class="imagem-container">
+                <img src="img/passarola.svg" alt="A Passarola">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="35" y="20" width="30" height="25" rx="3" />
+                </svg>
+                <div class="hotspot-dica" style="left: 50%; top: 32%;"></div>
+            </div>
+            <p class="instrucao-hotspot">Toca na Passarola para voar para a próxima página...</p>
+        </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA 6 — SUBTEMA: PERGUNTA   -->
+    <!-- ============================== -->
+    <div class="pagina" id="pagina-6">
+        <div class="pagina-conteudo">
+            <h2>O Sonho e a Realidade</h2>
+
+            <div class="pergunta-container">
+                <p class="pergunta-texto">Quem idealiza a Passarola na obra?</p>
+                <div class="opcoes">
+                    <button class="opcao" data-correta="false">D. João V</button>
+                    <button class="opcao" data-correta="false">Baltasar Sete-Sóis</button>
+                    <button class="opcao" data-correta="true">Padre Bartolomeu de Gusmão</button>
+                    <button class="opcao" data-correta="false">Domenico Scarlatti</button>
+                </div>
+                <p class="feedback"></p>
+                <button class="btn-continuar">Continuar →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- PÁGINA FINAL — RESULTADO       -->
+    <!-- ============================== -->
+    <div class="pagina pagina-final" id="pagina-final">
+        <div class="pagina-conteudo">
+            <h2>Viagem Completa!</h2>
+            <p class="resultado"></p>
+            <p class="mensagem-final">
+                "Além da vontade, que essa era a mais forte de todas, de não se baixar ao peso desmedido."<br>
+                — José Saramago
+            </p>
+            <button class="btn-recomecar">Recomeçar ↺</button>
+        </div>
+    </div>
+
+    <!-- Indicadores de página (bolinhas) -->
+    <div class="indicadores"></div>
+
+    <script src="js/js.js"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#1e2d4d"/>
+  <!-- Baltasar -->
+  <circle cx="320" cy="180" r="35" fill="#c9a84c"/>
+  <rect x="300" y="215" width="40" height="80" fill="#3d5070" rx="4"/>
+  <rect x="280" y="295" width="20" height="60" fill="#3d5070" rx="2"/>
+  <rect x="340" y="295" width="20" height="60" fill="#3d5070" rx="2"/>
+  <line x1="260" y1="240" x2="300" y2="250" stroke="#3d5070" stroke-width="6" stroke-linecap="round"/>
+  <!-- gancho (mão perdida) -->
+  <path d="M255 238 Q248 245 255 250" stroke="#888" stroke-width="3" fill="none"/>
+  <!-- Blimunda -->
+  <circle cx="480" cy="175" r="35" fill="#dfc06a"/>
+  <rect x="460" y="210" width="40" height="85" fill="#6a3a4a" rx="4"/>
+  <rect x="440" y="295" width="20" height="60" fill="#6a3a4a" rx="2"/>
+  <rect x="500" y="295" width="20" height="60" fill="#6a3a4a" rx="2"/>
+  <line x1="540" y1="235" x2="500" y2="245" stroke="#6a3a4a" stroke-width="6" stroke-linecap="round"/>
+  <!-- mãos unidas -->
+  <line x1="340" y1="250" x2="460" y2="240" stroke="#e0d6c8" stroke-width="4" stroke-linecap="round"/>
+  <!-- coração -->
+  <path d="M395 230 Q400 220 408 230 Q410 240 400 250 Q390 240 392 230 Z" fill="#c0392b"/>
+  <!-- chão -->
+  <rect x="0" y="360" width="800" height="140" fill="#16213e"/>
+  <text x="400" y="420" text-anchor="middle" fill="#6a7a9c" font-size="14" font-family="Georgia">Baltasar e Blimunda — Placeholder</text>
+</svg>
