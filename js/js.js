@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const paginas = document.querySelectorAll(".pagina");
     const indicadoresContainer = document.querySelector(".indicadores");
     const barraProgresso = document.querySelector(".barra-progresso");
+    const CLASSE_ATIVA = "ativa";
+    const CLASSE_FOCO = "em-foco";
     let paginaAtual = 0;
     let pontuacao = 0;
     let totalPerguntas = 0;
@@ -21,15 +23,35 @@ document.addEventListener("DOMContentLoaded", () => {
         indicadoresContainer.appendChild(dot);
     });
 
+    function marcarPaginaEmFoco(pagina) {
+        pagina.classList.remove(CLASSE_FOCO);
+        void pagina.offsetWidth;
+        pagina.classList.add(CLASSE_FOCO);
+    }
+
+    function prepararHotspotParaTeclado(hotspot) {
+        hotspot.setAttribute("tabindex", "0");
+        hotspot.setAttribute("role", "button");
+        hotspot.setAttribute("aria-label", "Ativar simbolo escondido");
+
+        hotspot.addEventListener("keydown", (evento) => {
+            if (evento.key === "Enter" || evento.key === " ") {
+                evento.preventDefault();
+                hotspot.click();
+            }
+        });
+    }
+
     function irParaPagina(indice) {
         if (indice < 0 || indice >= paginas.length) return;
 
         const anterior = paginas[paginaAtual];
-        anterior.classList.remove("ativa");
+        anterior.classList.remove(CLASSE_ATIVA, CLASSE_FOCO);
 
         paginaAtual = indice;
         const nova = paginas[paginaAtual];
-        nova.classList.add("ativa");
+        nova.classList.add(CLASSE_ATIVA);
+        marcarPaginaEmFoco(nova);
 
         // Scroll to top da nova página
         nova.scrollTop = 0;
@@ -61,8 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== Hotspots nas imagens (SVG) =====
     document.querySelectorAll(".hotspot").forEach(hotspot => {
+        prepararHotspotParaTeclado(hotspot);
+
         hotspot.addEventListener("click", () => {
             const container = hotspot.closest(".imagem-container");
+            if (!container) return;
+
             const dica = container.querySelector(".hotspot-dica");
 
             // Feedback visual no hotspot
@@ -93,6 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const feedback = container.querySelector(".feedback");
         const btnContinuar = container.querySelector(".btn-continuar");
         let respondida = false;
+
+        if (feedback) {
+            feedback.setAttribute("aria-live", "polite");
+        }
 
         opcoes.forEach(opcao => {
             opcao.addEventListener("click", () => {
@@ -181,5 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Inicializar
+    marcarPaginaEmFoco(paginas[paginaAtual]);
     atualizarProgresso();
 });
